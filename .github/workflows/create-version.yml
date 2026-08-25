@@ -24,9 +24,7 @@ concurrency:
 
 jobs:
   create_version:
-    uses: levieggert/shared-workflows/.github/workflows/spm-create-version.yml@main
+    uses: CruGlobal/godtools-swift/.github/workflows/shared-spm-create-version.yml@master
     with:
       version-increment-type: ${{ inputs.versionIncrementType }}
       manual-version-number: ${{ inputs.manualVersionNumber }}
-    secrets:
-      create_pr_token: ${{ secrets.CREATE_PULL_REQUEST_TOKEN }}

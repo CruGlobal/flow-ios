@@ -12,6 +12,4 @@ concurrency:
 
 jobs:
   build:
-    permissions:
-      contents: write
-    uses: levieggert/shared-workflows/.github/workflows/spm-build.yml@main
+    uses: CruGlobal/godtools-swift/.github/workflows/shared-spm-build.yml@master

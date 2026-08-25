@@ -14,8 +14,8 @@ concurrency:
 
 jobs:
   run_tests_and_code_coverage:
-    uses: levieggert/shared-workflows/.github/workflows/spm-run-tests.yml@main
+    uses: CruGlobal/godtools-swift/.github/workflows/shared-spm-run-tests.yml@master
     with:
       xcodebuild-test-scheme: Flow
     secrets:
-      create_pr_token: ${{ secrets.CREATE_PULL_REQUEST_TOKEN }}
+      codecov_token: ${{ secrets.CODECOV_TOKEN }}
