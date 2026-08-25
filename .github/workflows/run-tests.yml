@@ -1,0 +1,21 @@
+name: Run Tests
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  run_tests_and_code_coverage:
+    uses: levieggert/shared-workflows/.github/workflows/spm-run-tests.yml@main
+    with:
+      xcodebuild-test-scheme: Flow
+    secrets:
+      create_pr_token: ${{ secrets.CREATE_PULL_REQUEST_TOKEN }}
